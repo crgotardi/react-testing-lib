@@ -2,12 +2,12 @@
 // All tests will be started in parallel (describe.concurrent)
 describe('operations', () => {
     // Runs in parallel (it.concurrent)
-    it.concurrent('add 2 numbers', () => {
+    it.concurrent('concurrent', () => {
         expect(2 + 2).toBe(4)
     })
 
     // Runs in parallel (it.concurrent)
-    it.concurrent('add 2 numbers', async () => {
+    it.concurrent('concurrent', async () => {
         expect(2 + 2).toBe(4)
     })
 
@@ -45,7 +45,7 @@ describe('operations', () => {
         [1, 1, 2],
         [1, 2, 3],
         [2, 1, 3],
-    ])('add(%i, %i) -> %i', (a, b, expected) => {
+    ])('each(%i, %i) -> %i', (a, b, expected) => {
         expect(a + b).toBe(expected)
     })
 
@@ -54,7 +54,7 @@ describe('operations', () => {
         { a: 1, b: 1, expected: 2 },
         { a: 1, b: 2, expected: 3 },
         { a: 2, b: 1, expected: 3 },
-    ])('add with obj($a, $b) -> $expected', ({ a, b, expected }) => {
+    ])('each with obj($a, $b) -> $expected', ({ a, b, expected }) => {
         expect(a + b).toBe(expected)
     })
 })
