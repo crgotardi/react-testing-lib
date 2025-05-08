@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "bench": "vitest bench"
+    "bench": "vitest bench",
+    "test-ui": "vitest --ui"
   },
   "dependencies": {
     "react": "^19.0.0",

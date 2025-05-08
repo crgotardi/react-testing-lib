@@ -1,3 +1,5 @@
+import { vi, expect, describe, it } from 'vitest'
+
 const a = vi.fn()
     .mockImplementation((name: string) => {
         return name
@@ -283,5 +285,12 @@ describe('expect api', () => {
         // check if prop is instance of specified constructor
         const object = { name: 'name' }
         expect(object).toEqual({ name: expect.any(String) })
+    })
+
+    it('match snapshot', () => {
+        const string = 'Laura'
+        const result = string.toUpperCase()
+        expect(result).toMatchSnapshot()
+        expect(result).toMatchInlineSnapshot(`"LAURA"`)
     })
 })
