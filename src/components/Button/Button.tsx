@@ -5,9 +5,9 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> & {
     children: React.ReactNode,
 }
 
-const Button: React.FC<ButtonProps> = ({ children, type }) => {
+const Button: React.FC<ButtonProps> = ({ children, type, onClick }) => {
     return (
-        <button type={type}>
+        <button type={type} onClick={onClick}>
             {children}
         </button>
     )
